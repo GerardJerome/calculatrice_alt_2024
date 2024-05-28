@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="TEXT_HELLO_WORLD">Hello world en allemand</string>
+    <string name="button_clear">VIDER en allemand</string>
+    <string name="button_calc">Calcule en allemand</string>
+
+
+</resources>
