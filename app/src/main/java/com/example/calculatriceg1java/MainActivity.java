@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button boutonCalculatrice;
     private TextView textviewCalcul;
+    private Button boutonHistorique;
 
 
     @Override
@@ -34,11 +35,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         boutonCalculatrice = findViewById(R.id.button_calculatrice);
         textviewCalcul = findViewById(R.id.textview_calcul);
+        boutonHistorique = findViewById(R.id.bouton_historique);
         boutonCalculatrice.setOnClickListener(view -> {
             Intent intent = new Intent(this,CalculActivity.class);
             startActivity(intent);
             textviewCalcul.setText("jean pierre");
             Toast.makeText(this,"j'affiche un toast",Toast.LENGTH_LONG).show();
+        });
+        boutonHistorique.setOnClickListener(view -> {
+            Intent intent = new Intent(this, HistoriqueActivity.class);
+            startActivity(intent);
         });
     }
 

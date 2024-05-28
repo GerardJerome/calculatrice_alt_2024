@@ -14,6 +14,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.calculatriceg1java.Entities.Calcul;
+import com.example.calculatriceg1java.database.CalculBaseHelper;
+import com.example.calculatriceg1java.database.CalculDao;
+
 public class CalculActivity extends AppCompatActivity {
 
     private Button buttonPlus;
@@ -34,6 +38,8 @@ public class CalculActivity extends AppCompatActivity {
     private TypeOperation typeOperation;
     private Integer premierElement=0;
     private Integer deuxiemeElement=0;
+
+    private CalculDao calculDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +81,7 @@ public class CalculActivity extends AppCompatActivity {
         buttonPlus.setOnClickListener(view -> appuieType(TypeOperation.ADD));
         buttonSubstract.setOnClickListener(view -> appuieType(TypeOperation.SUBSTRACT));
         buttonDivide.setOnClickListener(viez -> appuieType(TypeOperation.DIVIDE));
-
+        calculDao = new CalculDao(new CalculBaseHelper(this,"db_alt",null,1));
     }
 
     private void ajouterCharactere(String AAjouter){
@@ -108,6 +114,10 @@ public class CalculActivity extends AppCompatActivity {
     }
 
     private boolean calcule() {
+        Calcul calcul =new Calcul();
+        calcul.setPremierElement(premierElement);
+        calcul.setDeuxiemeElement(deuxiemeElement);
+        calcul.setSymbole(typeOperation.getSymbole());
         String resultat="";
         switch(this.typeOperation){
             case ADD:
@@ -124,6 +134,8 @@ public class CalculActivity extends AppCompatActivity {
                 break;
 
         }
+        calcul.setResultat(Integer.valueOf(resultat));
+        calculDao.create(calcul);
         Toast.makeText(this,resultat,Toast.LENGTH_LONG).show();
         return true;
     }

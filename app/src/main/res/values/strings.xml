@@ -60,4 +60,7 @@
     <string name="button_9" translatable="false">9</string>
     <string name="button_clear">VIDER</string>
     <string name="button_calc">Calcule</string>
+    <string name="bouton_historique">Historique</string>
+    <string name="TEXT_DERNIER_CALCUL">Le dernier calcul est  %1$s</string>
+    <string name="TEXT_NOMBRE_CALCUL">Il y a %1$d calculs dans la base</string>
 </resources>

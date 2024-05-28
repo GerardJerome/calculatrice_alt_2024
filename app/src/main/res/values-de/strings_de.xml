@@ -3,6 +3,10 @@
     <string name="TEXT_HELLO_WORLD">Hello world en allemand</string>
     <string name="button_clear">VIDER en allemand</string>
     <string name="button_calc">Calcule en allemand</string>
+    <string name="bouton_historique">Historique en allemand</string>
+    <string name="TEXT_DERNIER_CALCUL">Le dernier calcul est  %1$s en allemand</string>
+    <string name="TEXT_NOMBRE_CALCUL">Il y a %1$d calculs dans la base en allemand</string>
+
 
 
 </resources>
